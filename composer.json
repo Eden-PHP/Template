@@ -1,5 +1,5 @@
 {
-    "name": "eden-php/template",
+    "name": "eden/template",
     "type": "library",
     "description": "Eden template component. Lazy template engine",
     "keywords": ["eden", "library"],
