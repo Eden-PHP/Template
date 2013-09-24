@@ -7,7 +7,7 @@
  * distributed with this package.
  */
  
-class Eden_Tests_Template_BaseTest extends \PHPUnit_Framework_TestCase
+class Eden_Template_Tests_Template_BaseTest extends \PHPUnit_Framework_TestCase
 {
     public function testSet() 
     {
@@ -72,7 +72,7 @@ class Eden_Tests_Template_BaseTest extends \PHPUnit_Framework_TestCase
 	{
 		$string = eden('template')
 			->set('test', array('key' => 'something'))
-			->parsePhp(__DIR__.'/../../../assets/template.php');
+			->parsePhp(__DIR__.'/../assets/template.php');
 		
 		$this->assertEquals('something', $string);
 	}
