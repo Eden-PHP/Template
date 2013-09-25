@@ -164,7 +164,7 @@ Much like `Figure 7`, `Figure 8` just has the `{rows}` wrapper to repeat what's 
 
 ====
 
-#Contibuting to Eden
+#Contributing to Eden
 
 ##Setting up your machine with the Eden repository and your fork
 
