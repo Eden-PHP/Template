@@ -6,13 +6,12 @@
  * Copyright and license information can be found at LICENSE
  * distributed with this package.
  */
- 
-class Eden_Template_Tests_Template_BaseTest extends \PHPUnit_Framework_TestCase
+class EdenTemplateIndexTest extends PHPUnit_Framework_TestCase
 {
     public function testSet() 
     {
 		$class = eden('template')->set('foo', 'bar');
-		$this->assertInstanceOf('Eden\\Template\\Base', $class);
+		$this->assertInstanceOf('Eden\\Template\\Index', $class);
     }
 	
 	public function testParseEngine() 
@@ -72,7 +71,7 @@ class Eden_Template_Tests_Template_BaseTest extends \PHPUnit_Framework_TestCase
 	{
 		$string = eden('template')
 			->set('test', array('key' => 'something'))
-			->parsePhp(__DIR__.'/../assets/template.php');
+			->parsePhp(__DIR__.'/assets/template.php');
 		
 		$this->assertEquals('something', $string);
 	}

@@ -9,8 +9,6 @@
 
 namespace Eden\Template;
 
-use Eden\Core\Base as CoreBase;
-
 /**
  * The base class for all classes wishing to integrate with Eden.
  * Extending this class will allow your methods to seemlessly be
@@ -18,13 +16,14 @@ use Eden\Core\Base as CoreBase;
  * loading patterns.
  *
  * @vendor Eden
- * @package Template
+ * @package template
  * @author Christian Blanquera cblanquera@openovate.com
  */
-class Base extends CoreBase
+class Index extends Base
 {
 	const ENGINE_PATTERN = '!{([@$#])([A-Za-z0-9:_]+)}|{([A-Za-z:_\!][A-Za-z0-9:_]*)(\s*,(.+?))?(/}|}(.*?){/\\3})!s';
-    protected $data = array();
+    
+	protected $data = array();
 	
 	private $callback = null;
 	
