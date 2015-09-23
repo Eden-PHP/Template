@@ -6,7 +6,6 @@
  * Copyright and license information can be found at LICENSE
  * distributed with this package.
  */
-ob_start();
 //assuming we are in a composer vendor folder
 require_once __DIR__.'/../../../autoload.php';
 require_once __DIR__.'/../../core/src/Control.php';
