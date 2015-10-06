@@ -142,7 +142,7 @@ class Index extends Base
      */
     protected function engineParseResults($matches)
     {
-        switch(count($matches)) {
+        switch (count($matches)) {
             case 3:
                 if (!isset($this->data[$matches[2]])) {
                     if ($this->callback) {
@@ -154,7 +154,7 @@ class Index extends Base
                 
                 //if count
                 if ($matches[1] == '#') {
-                    switch(true) {
+                    switch (true) {
                         case is_numeric($this->data[$matches[2]]):
                             return $this->data[$matches[2]];
                         case is_string($this->data[$matches[2]]):
