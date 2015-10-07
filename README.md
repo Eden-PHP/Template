@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/Eden-PHP/Template.png)](https://travis-ci.org/Eden-PHP/Template)
+===
 # Templating
 
 In *Eden*, we promote PHP templating and provided a one stop class to simply bind variables to template files or strings and return the final results.
