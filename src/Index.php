@@ -15,9 +15,10 @@ namespace Eden\Template;
  * overloaded and overrided as well as provide some basic class
  * loading patterns.
  *
- * @vendor Eden
- * @package template
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  template
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Index extends Base
 {
@@ -32,6 +33,7 @@ class Index extends Base
      *
      * @param *array|string
      * @param mixed
+     *
      * @return this
      */
     public function set($data, $value = null)
@@ -60,6 +62,7 @@ class Index extends Base
      *
      * @param string template
      * @param callable|null callback to be used when key does not exist in data
+     *
      * @return string
      */
     public function parseEngine($template, $callback = null)
@@ -84,6 +87,7 @@ class Index extends Base
      * Simple string replace template parser
      *
      * @param *string template file
+     *
      * @return string
      */
     public function parseString($string)
@@ -103,6 +107,7 @@ class Index extends Base
      *
      * @param *string template file or PHP template string
      * @param bool whether to evaluate the first argument
+     *
      * @return string
      */
     public function parsePhp($___file, $___evalString = false)
@@ -138,6 +143,7 @@ class Index extends Base
      * binded values
      *
      * @param array
+     *
      * @return string|null
      */
     protected function engineParseResults($matches)
