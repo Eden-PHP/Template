@@ -10,15 +10,11 @@
 namespace Eden\Template;
 
 /**
- * The base class for all classes wishing to integrate with Eden.
- * Extending this class will allow your methods to seemlessly be
- * overloaded and overrided as well as provide some basic class
- * loading patterns.
+ * General available methods for common template procedures.
  *
- * @vendor   Eden
- * @package  template
- * @author   Christian Blanquera <cblanquera@openovate.com>
- * @standard PSR-2
+ * @vendor Eden
+ * @package Template
+ * @author Christian Blanquera cblanquera@openovate.com
  */
 class Index extends Base
 {
@@ -31,10 +27,9 @@ class Index extends Base
     /**
      * Sets template variables
      *
-     * @param *array|string
-     * @param mixed
-     *
-     * @return this
+     * @param *array|string $data   data
+     * @param mixed         $value  value
+     * @return Eden\Template\Index
      */
     public function set($data, $value = null)
     {
@@ -60,9 +55,8 @@ class Index extends Base
      * ex {$title}
      * ex {products}{$title}{/products}
      *
-     * @param string template
-     * @param callable|null callback to be used when key does not exist in data
-     *
+     * @param *string       $template   template
+     * @param callable|null $callback   callback to be used when key does not exist in data
      * @return string
      */
     public function parseEngine($template, $callback = null)
@@ -86,8 +80,7 @@ class Index extends Base
     /**
      * Simple string replace template parser
      *
-     * @param *string template file
-     *
+     * @param *string $string   template file
      * @return string
      */
     public function parseString($string)
@@ -105,9 +98,8 @@ class Index extends Base
     /**
      * For PHP templates, this will transform the given document to an actual page or partial
      *
-     * @param *string template file or PHP template string
-     * @param bool whether to evaluate the first argument
-     *
+     * @param *string   $___file        template file or PHP template string
+     * @param bool      $___evalString  whether to evaluate the first argument
      * @return string
      */
     public function parsePhp($___file, $___evalString = false)
@@ -142,8 +134,7 @@ class Index extends Base
      * to eventually return a string considering
      * binded values
      *
-     * @param array
-     *
+     * @param *array $matches matches
      * @return string|null
      */
     protected function engineParseResults($matches)
