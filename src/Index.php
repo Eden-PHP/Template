@@ -1,9 +1,9 @@
 <?php //-->
-/*
- * This file is part of the Template package of the Eden PHP Library.
- * (c) 2013-2014 Openovate Labs
+/**
+ * This file is part of the Eden PHP Library.
+ * (c) 2014-2016 Openovate Labs
  *
- * Copyright and license information can be found at LICENSE
+ * Copyright and license information can be found at LICENSE.txt
  * distributed with this package.
  */
 
@@ -12,23 +12,34 @@ namespace Eden\Template;
 /**
  * General available methods for common template procedures.
  *
- * @vendor Eden
- * @package Template
- * @author Christian Blanquera cblanquera@openovate.com
+ * @package  Eden
+ * @category Template
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Index extends Base
 {
+    /**
+     * @const string ENGINE_PATTERN Template variable regexp pattern
+     */
     const ENGINE_PATTERN = '!{([@$#])([A-Za-z0-9:_]+)}|{([A-Za-z:_\!][A-Za-z0-9:_]*)(\s*,(.+?))?(/}|}(.*?){/\\3})!s';
     
+    /**
+     * @var array $data The data that will be bound in the template
+     */
     protected $data = array();
-    
+       
+    /**
+     * @var function|null $callback The handler to call when we cannot find a template value
+     */
     private $callback = null;
     
     /**
      * Sets template variables
      *
-     * @param *array|string $data   data
-     * @param mixed         $value  value
+     * @param *array|string $data  data
+     * @param mixed         $value value
+     *
      * @return Eden\Template\Index
      */
     public function set($data, $value = null)
@@ -55,8 +66,9 @@ class Index extends Base
      * ex {$title}
      * ex {products}{$title}{/products}
      *
-     * @param *string       $template   template
-     * @param callable|null $callback   callback to be used when key does not exist in data
+     * @param *string       $template The template string
+     * @param callable|null $callback Callback to be used when key does not exist in data
+     *
      * @return string
      */
     public function parseEngine($template, $callback = null)
@@ -80,7 +92,8 @@ class Index extends Base
     /**
      * Simple string replace template parser
      *
-     * @param *string $string   template file
+     * @param *string $string The template string
+     *
      * @return string
      */
     public function parseString($string)
@@ -98,8 +111,9 @@ class Index extends Base
     /**
      * For PHP templates, this will transform the given document to an actual page or partial
      *
-     * @param *string   $___file        template file or PHP template string
-     * @param bool      $___evalString  whether to evaluate the first argument
+     * @param *string $___file       Template file or PHP template string
+     * @param bool    $___evalString Whether to evaluate the first argument
+     *
      * @return string
      */
     public function parsePhp($___file, $___evalString = false)
@@ -134,7 +148,8 @@ class Index extends Base
      * to eventually return a string considering
      * binded values
      *
-     * @param *array $matches matches
+     * @param *array $matches Matches usually given by a preg method
+     *
      * @return string|null
      */
     protected function engineParseResults($matches)
